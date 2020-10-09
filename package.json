@@ -1,0 +1,42 @@
+{
+  "name": "song-text",
+  "version": "1.0.0",
+  "description": "A package to manage Song Text with Chords",
+  "main": "lib/song-text.js",
+  "types": "lib/song-text.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucadello91/song-text.git"
+  },
+  "keywords": [],
+  "author": "Luca Dell'Orto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucadello91/song-text/issues"
+  },
+  "homepage": "https://github.com/lucadello91/song-text#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "jest": "^26.5.2",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.0.3"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {}
+}
